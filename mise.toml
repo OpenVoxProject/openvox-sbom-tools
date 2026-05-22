@@ -1,0 +1,21 @@
+min_version = "2026.5.13"
+
+[tools]
+ruby = "4.0"
+
+[settings.ruby]
+compile = false
+
+# Auto-add local binstubs.
+[env]
+_.path = ["./bin"]
+BUNDLE_PATH = "./vendor"
+
+# === Ruby Operations ===
+[tasks.bundle-install]
+run     = ["bundle install", "bundle binstubs rake"] 
+sources = ["Gemfile", "Gemfile.local"]
+
+[tasks.rake]
+run     = "rake"
+depends = ["bundle-install"]
