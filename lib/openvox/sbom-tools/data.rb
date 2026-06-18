@@ -19,9 +19,7 @@ module OpenVox::SBOMTools
                            branch: 'main',
                            path: 'platforms.json'},
 
-      'runtime_component_info.json' => {repo: 'OpenVoxProject/puppet-runtime',
-                                        branch: 'main',
-                                        path: 'component_info.json'},
+      'runtime_component_info.json' => {repo: 'OpenVoxProject/puppet-runtime'}
     }
 
     module_function
@@ -48,7 +46,12 @@ module OpenVox::SBOMTools
         next unless specific_file.nil? || name == specific_file
 
         file = file_path(name)
-        source = OpenVox::SBOMTools::Sources::GitHub.new(file, **opts)
+        source = case name
+                 when 'runtime_component_info.json'
+                   OpenVox::SBOMTools::Sources::Runtime.new(file, **opts)
+                 else
+                   OpenVox::SBOMTools::Sources::GitHub.new(file, **opts)
+                 end
 
         source.update!
       end
