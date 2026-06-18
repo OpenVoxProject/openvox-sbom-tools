@@ -19,7 +19,9 @@ module OpenVox::SBOMTools
                            branch: 'main',
                            path: 'platforms.json'},
 
-      'runtime_component_info.json' => {repo: 'OpenVoxProject/puppet-runtime'}
+      'runtime_component_info.json' => {repo: 'OpenVoxProject/puppet-runtime'},
+      'openvox-agent_component_info.json' => {repo: 'OpenVoxProject/openvox',
+                                              path: 'packaging'}
     }
 
     module_function
@@ -49,6 +51,8 @@ module OpenVox::SBOMTools
         source = case name
                  when 'runtime_component_info.json'
                    OpenVox::SBOMTools::Sources::Runtime.new(file, **opts)
+                 when 'openvox-agent_component_info.json'
+                   OpenVox::SBOMTools::Sources::OpenVoxAgent.new(file, **opts)
                  else
                    OpenVox::SBOMTools::Sources::GitHub.new(file, **opts)
                  end

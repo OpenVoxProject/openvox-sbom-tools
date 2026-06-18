@@ -19,10 +19,15 @@ module OpenVox::SBOMTools::Sources
 
     attr_reader :data_file, :cache_dir
 
-    def initialize(data_file, repo:)
+    def initialize(data_file, repo:, path: nil)
       @data_file = data_file
       @repo      = repo
-      @cache_dir = FileUtils.mkdir_p(File.join(CACHE_DIR, repo)).first
+      @cache_dir   = FileUtils.mkdir_p(File.join(CACHE_DIR, repo)).first
+      @vanagon_dir = if path.nil?
+                       @cache_dir
+                     else
+                       File.join(@cache_dir, path)
+                     end
 
       init_repo
     end
@@ -84,7 +89,7 @@ module OpenVox::SBOMTools::Sources
         project_data[project] = {}
 
         all_platforms = exec('bundle', 'exec', 'vanagon', 'list', '-l',
-                              workdir: @cache_dir).split("\n")
+                              workdir: @vanagon_dir).split("\n")
         project_platforms = platform_list(tag, project)
 
         # Platforms will be the intersection of what is available in
@@ -94,7 +99,7 @@ module OpenVox::SBOMTools::Sources
         platforms.each do |platform|
           $stderr.puts "  #{platform}"
           output = exec('bundle', 'exec', 'vanagon', 'inspect',
-                        project, platform, workdir: @cache_dir)
+                        project, platform, workdir: @vanagon_dir)
 
           platform_data = JSON.parse(output)
           project_data[project][platform] = platform_data.map { |h| [h['name'], h['version'] || h.dig('options', 'ref')] }.to_h
