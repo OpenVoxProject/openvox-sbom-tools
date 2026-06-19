@@ -68,8 +68,9 @@ module OpenVox::SBOMTools::Sources
     # private
 
     def list_tags
-      tags = exec('git', 'tag', '--sort=creatordate', workdir: @cache_dir)
-      tags = tags.split("\n")
+      result = exec('git', 'tag', '--sort=creatordate', workdir: @cache_dir)
+      # TODO: Check for failed command.
+      tags = result.stdout.split("\n")
 
       tags[tags.find_index(@first_tag)..-1]
     end
@@ -91,8 +92,10 @@ module OpenVox::SBOMTools::Sources
         $stderr.puts "Processing project #{project}"
         project_data[project] = {}
 
-        all_platforms = exec('bundle', 'exec', 'vanagon', 'list', '-l',
-                              workdir: @vanagon_dir).split("\n")
+        result = exec('bundle', 'exec', 'vanagon', 'list', '-l',
+                      workdir: @vanagon_dir)
+        # TODO: Check for failed command.
+        all_platforms = result.stdout.split("\n")
         project_platforms = platform_list(tag, project)
 
         # Platforms will be the intersection of what is available in
@@ -101,10 +104,19 @@ module OpenVox::SBOMTools::Sources
 
         platforms.each do |platform|
           $stderr.puts "  #{platform}"
-          output = exec('bundle', 'exec', 'vanagon', 'inspect',
+          result = exec('bundle', 'exec', 'vanagon', 'inspect',
                         project, platform, workdir: @vanagon_dir)
 
-          platform_data = JSON.parse(output)
+          # Sometimes, "vanagon inspect" just fails for a particular
+          # platform, often due to missing artifacts. We loose some
+          # small amount of data when this happens, but that is an
+          # acceptable trade-off for not failing the entire operation.
+          unless result.success?
+            $stderr.puts "WARN Failed to gather data for #{platform}"
+            next
+          end
+
+          platform_data = JSON.parse(result.stdout)
           project_data[project][platform] = platform_data.map { |h| [h['name'], h['version'] || h.dig('options', 'ref')] }.to_h
         end
       end
