@@ -1,0 +1,970 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:7ced3441-7af8-4d65-9ca7-73a388606e61",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-22T15:25:56Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "sbom",
+          "version": "0.4.1"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "openvox-agent",
+      "version": "9.0.0-alpha1"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "puppet-runtime",
+      "bom-ref": "puppet-runtime_2026.05.20.1",
+      "version": "2026.05.20.1"
+    },
+    {
+      "type": "library",
+      "name": "puppet",
+      "bom-ref": "puppet_8.26.2",
+      "version": "8.26.2"
+    },
+    {
+      "type": "library",
+      "name": "openfact",
+      "bom-ref": "openfact_5.6.1",
+      "version": "5.6.1"
+    },
+    {
+      "type": "library",
+      "name": "puppet-resource_api",
+      "bom-ref": "puppet-resource_api_refs/tags/1.9.0",
+      "version": "refs/tags/1.9.0"
+    },
+    {
+      "type": "library",
+      "name": "shellpath",
+      "bom-ref": "shellpath_2023-02-15",
+      "version": "2023-02-15"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-augeas_core",
+      "bom-ref": "module-puppetlabs-augeas_core_refs/tags/v1.5.0",
+      "version": "refs/tags/v1.5.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-cron_core",
+      "bom-ref": "module-puppetlabs-cron_core_refs/tags/v1.3.0",
+      "version": "refs/tags/v1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-host_core",
+      "bom-ref": "module-puppetlabs-host_core_refs/tags/v1.3.0",
+      "version": "refs/tags/v1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-mount_core",
+      "bom-ref": "module-puppetlabs-mount_core_refs/tags/v1.3.0",
+      "version": "refs/tags/v1.3.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-scheduled_task",
+      "bom-ref": "module-puppetlabs-scheduled_task_refs/tags/v3.2.0",
+      "version": "refs/tags/v3.2.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-selinux_core",
+      "bom-ref": "module-puppetlabs-selinux_core_refs/tags/v1.4.0",
+      "version": "refs/tags/v1.4.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-sshkeys_core",
+      "bom-ref": "module-puppetlabs-sshkeys_core_refs/tags/v2.5.0",
+      "version": "refs/tags/v2.5.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-yumrepo_core",
+      "bom-ref": "module-puppetlabs-yumrepo_core_refs/tags/v2.1.0",
+      "version": "refs/tags/v2.1.0"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-zfs_core",
+      "bom-ref": "module-puppetlabs-zfs_core_refs/tags/v1.6.1",
+      "version": "refs/tags/v1.6.1"
+    },
+    {
+      "type": "library",
+      "name": "module-puppetlabs-zone_core",
+      "bom-ref": "module-puppetlabs-zone_core_refs/tags/v1.2.0",
+      "version": "refs/tags/v1.2.0"
+    },
+    {
+      "type": "library",
+      "name": "openssl-fips",
+      "bom-ref": "openssl-fips_2025.12.17.1",
+      "version": "2025.12.17.1"
+    },
+    {
+      "type": "library",
+      "name": "libffi",
+      "bom-ref": "libffi_3.5.2",
+      "version": "3.5.2",
+      "purl": "pkg:github/libffi/libffi@3.5.2",
+      "cpe": "cpe:2.3:a:libffi_project:libffi:3.5.2:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "libyaml",
+      "bom-ref": "libyaml_0.2.5",
+      "version": "0.2.5",
+      "purl": "pkg:github/yaml/libyaml@0.2.5",
+      "cpe": "cpe:2.3:a:pyyaml:libyaml:0.2.5:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "openssl",
+      "bom-ref": "openssl_3.5.6",
+      "version": "3.5.6",
+      "purl": "pkg:github/openssl/openssl@3.5.6",
+      "cpe": "cpe:2.3:a:openssl:openssl:3.5.6:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "puppet-ca-bundle",
+      "bom-ref": "puppet-ca-bundle_refs/tags/1.1.0",
+      "version": "refs/tags/1.1.0"
+    },
+    {
+      "type": "platform",
+      "name": "ruby",
+      "bom-ref": "ruby_4.0.5",
+      "version": "4.0.5",
+      "purl": "pkg:github/ruby/ruby@4.0.5",
+      "cpe": "cpe:2.3:a:ruby-lang:ruby:4.0.5:*:*:*:*:*:*:*",
+      "components": [
+        {
+          "type": "library",
+          "name": "bundler",
+          "bom-ref": "bundler_4.0.10",
+          "version": "4.0.10",
+          "purl": "pkg:gem/bundler@4.0.10"
+        },
+        {
+          "type": "library",
+          "name": "date",
+          "bom-ref": "date_3.5.1",
+          "version": "3.5.1",
+          "purl": "pkg:gem/date@3.5.1"
+        },
+        {
+          "type": "library",
+          "name": "delegate",
+          "bom-ref": "delegate_0.6.1",
+          "version": "0.6.1",
+          "purl": "pkg:gem/delegate@0.6.1"
+        },
+        {
+          "type": "library",
+          "name": "did_you_mean",
+          "bom-ref": "did_you_mean_2.0.0",
+          "version": "2.0.0",
+          "purl": "pkg:gem/did_you_mean@2.0.0"
+        },
+        {
+          "type": "library",
+          "name": "digest",
+          "bom-ref": "digest_3.2.1",
+          "version": "3.2.1",
+          "purl": "pkg:gem/digest@3.2.1"
+        },
+        {
+          "type": "library",
+          "name": "english",
+          "bom-ref": "english_0.8.1",
+          "version": "0.8.1",
+          "purl": "pkg:gem/english@0.8.1"
+        },
+        {
+          "type": "library",
+          "name": "erb",
+          "bom-ref": "erb_6.0.1.1",
+          "version": "6.0.1.1",
+          "purl": "pkg:gem/erb@6.0.1.1"
+        },
+        {
+          "type": "library",
+          "name": "error_highlight",
+          "bom-ref": "error_highlight_0.7.1",
+          "version": "0.7.1",
+          "purl": "pkg:gem/error_highlight@0.7.1"
+        },
+        {
+          "type": "library",
+          "name": "etc",
+          "bom-ref": "etc_1.4.6",
+          "version": "1.4.6",
+          "purl": "pkg:gem/etc@1.4.6"
+        },
+        {
+          "type": "library",
+          "name": "fcntl",
+          "bom-ref": "fcntl_1.3.0",
+          "version": "1.3.0",
+          "purl": "pkg:gem/fcntl@1.3.0"
+        },
+        {
+          "type": "library",
+          "name": "fileutils",
+          "bom-ref": "fileutils_1.8.0",
+          "version": "1.8.0",
+          "purl": "pkg:gem/fileutils@1.8.0"
+        },
+        {
+          "type": "library",
+          "name": "find",
+          "bom-ref": "find_0.2.0",
+          "version": "0.2.0",
+          "purl": "pkg:gem/find@0.2.0"
+        },
+        {
+          "type": "library",
+          "name": "forwardable",
+          "bom-ref": "forwardable_1.4.0",
+          "version": "1.4.0",
+          "purl": "pkg:gem/forwardable@1.4.0"
+        },
+        {
+          "type": "library",
+          "name": "io-console",
+          "bom-ref": "io-console_0.8.2",
+          "version": "0.8.2",
+          "purl": "pkg:gem/io-console@0.8.2"
+        },
+        {
+          "type": "library",
+          "name": "io-nonblock",
+          "bom-ref": "io-nonblock_0.3.2",
+          "version": "0.3.2",
+          "purl": "pkg:gem/io-nonblock@0.3.2"
+        },
+        {
+          "type": "library",
+          "name": "io-wait",
+          "bom-ref": "io-wait_0.4.0",
+          "version": "0.4.0",
+          "purl": "pkg:gem/io-wait@0.4.0"
+        },
+        {
+          "type": "library",
+          "name": "ipaddr",
+          "bom-ref": "ipaddr_1.2.8",
+          "version": "1.2.8",
+          "purl": "pkg:gem/ipaddr@1.2.8"
+        },
+        {
+          "type": "library",
+          "name": "json",
+          "bom-ref": "json_2.18.0",
+          "version": "2.18.0",
+          "purl": "pkg:gem/json@2.18.0"
+        },
+        {
+          "type": "library",
+          "name": "net-http",
+          "bom-ref": "net-http_0.9.1",
+          "version": "0.9.1",
+          "purl": "pkg:gem/net-http@0.9.1"
+        },
+        {
+          "type": "library",
+          "name": "net-protocol",
+          "bom-ref": "net-protocol_0.2.2",
+          "version": "0.2.2",
+          "purl": "pkg:gem/net-protocol@0.2.2"
+        },
+        {
+          "type": "library",
+          "name": "open3",
+          "bom-ref": "open3_0.2.1",
+          "version": "0.2.1",
+          "purl": "pkg:gem/open3@0.2.1"
+        },
+        {
+          "type": "library",
+          "name": "openssl",
+          "bom-ref": "openssl_4.0.0",
+          "version": "4.0.0",
+          "purl": "pkg:gem/openssl@4.0.0"
+        },
+        {
+          "type": "library",
+          "name": "open-uri",
+          "bom-ref": "open-uri_0.5.0",
+          "version": "0.5.0",
+          "purl": "pkg:gem/open-uri@0.5.0"
+        },
+        {
+          "type": "library",
+          "name": "optparse",
+          "bom-ref": "optparse_0.8.1",
+          "version": "0.8.1",
+          "purl": "pkg:gem/optparse@0.8.1"
+        },
+        {
+          "type": "library",
+          "name": "pp",
+          "bom-ref": "pp_0.6.3",
+          "version": "0.6.3",
+          "purl": "pkg:gem/pp@0.6.3"
+        },
+        {
+          "type": "library",
+          "name": "prettyprint",
+          "bom-ref": "prettyprint_0.2.0",
+          "version": "0.2.0",
+          "purl": "pkg:gem/prettyprint@0.2.0"
+        },
+        {
+          "type": "library",
+          "name": "prism",
+          "bom-ref": "prism_1.8.1",
+          "version": "1.8.1",
+          "purl": "pkg:gem/prism@1.8.1"
+        },
+        {
+          "type": "library",
+          "name": "psych",
+          "bom-ref": "psych_5.3.1",
+          "version": "5.3.1",
+          "purl": "pkg:gem/psych@5.3.1"
+        },
+        {
+          "type": "library",
+          "name": "resolv",
+          "bom-ref": "resolv_0.7.0",
+          "version": "0.7.0",
+          "purl": "pkg:gem/resolv@0.7.0"
+        },
+        {
+          "type": "library",
+          "name": "ruby2_keywords",
+          "bom-ref": "ruby2_keywords_0.0.5",
+          "version": "0.0.5",
+          "purl": "pkg:gem/ruby2_keywords@0.0.5"
+        },
+        {
+          "type": "library",
+          "name": "rubygems",
+          "bom-ref": "rubygems_4.0.10",
+          "version": "4.0.10",
+          "purl": "pkg:gem/rubygems@4.0.10"
+        },
+        {
+          "type": "library",
+          "name": "securerandom",
+          "bom-ref": "securerandom_0.4.1",
+          "version": "0.4.1",
+          "purl": "pkg:gem/securerandom@0.4.1"
+        },
+        {
+          "type": "library",
+          "name": "shellwords",
+          "bom-ref": "shellwords_0.2.2",
+          "version": "0.2.2",
+          "purl": "pkg:gem/shellwords@0.2.2"
+        },
+        {
+          "type": "library",
+          "name": "singleton",
+          "bom-ref": "singleton_0.3.0",
+          "version": "0.3.0",
+          "purl": "pkg:gem/singleton@0.3.0"
+        },
+        {
+          "type": "library",
+          "name": "stringio",
+          "bom-ref": "stringio_3.2.0",
+          "version": "3.2.0",
+          "purl": "pkg:gem/stringio@3.2.0"
+        },
+        {
+          "type": "library",
+          "name": "strscan",
+          "bom-ref": "strscan_3.1.6",
+          "version": "3.1.6",
+          "purl": "pkg:gem/strscan@3.1.6"
+        },
+        {
+          "type": "library",
+          "name": "syntax_suggest",
+          "bom-ref": "syntax_suggest_2.0.3",
+          "version": "2.0.3",
+          "purl": "pkg:gem/syntax_suggest@2.0.3"
+        },
+        {
+          "type": "library",
+          "name": "tempfile",
+          "bom-ref": "tempfile_0.3.1",
+          "version": "0.3.1",
+          "purl": "pkg:gem/tempfile@0.3.1"
+        },
+        {
+          "type": "library",
+          "name": "time",
+          "bom-ref": "time_0.4.2",
+          "version": "0.4.2",
+          "purl": "pkg:gem/time@0.4.2"
+        },
+        {
+          "type": "library",
+          "name": "timeout",
+          "bom-ref": "timeout_0.6.0",
+          "version": "0.6.0",
+          "purl": "pkg:gem/timeout@0.6.0"
+        },
+        {
+          "type": "library",
+          "name": "tmpdir",
+          "bom-ref": "tmpdir_0.3.1",
+          "version": "0.3.1",
+          "purl": "pkg:gem/tmpdir@0.3.1"
+        },
+        {
+          "type": "library",
+          "name": "tsort",
+          "bom-ref": "tsort_0.2.0",
+          "version": "0.2.0",
+          "purl": "pkg:gem/tsort@0.2.0"
+        },
+        {
+          "type": "library",
+          "name": "un",
+          "bom-ref": "un_0.3.0",
+          "version": "0.3.0",
+          "purl": "pkg:gem/un@0.3.0"
+        },
+        {
+          "type": "library",
+          "name": "uri",
+          "bom-ref": "uri_1.1.1",
+          "version": "1.1.1",
+          "purl": "pkg:gem/uri@1.1.1"
+        },
+        {
+          "type": "library",
+          "name": "weakref",
+          "bom-ref": "weakref_0.1.4",
+          "version": "0.1.4",
+          "purl": "pkg:gem/weakref@0.1.4"
+        },
+        {
+          "type": "library",
+          "name": "win32-registry",
+          "bom-ref": "win32-registry_0.1.2",
+          "version": "0.1.2",
+          "purl": "pkg:gem/win32-registry@0.1.2"
+        },
+        {
+          "type": "library",
+          "name": "yaml",
+          "bom-ref": "yaml_0.4.0",
+          "version": "0.4.0",
+          "purl": "pkg:gem/yaml@0.4.0"
+        },
+        {
+          "type": "library",
+          "name": "zlib",
+          "bom-ref": "zlib_3.2.3",
+          "version": "3.2.3",
+          "purl": "pkg:gem/zlib@3.2.3"
+        },
+        {
+          "type": "library",
+          "name": "abbrev",
+          "bom-ref": "abbrev_0.1.2",
+          "version": "0.1.2",
+          "purl": "pkg:gem/abbrev@0.1.2"
+        },
+        {
+          "type": "library",
+          "name": "base64",
+          "bom-ref": "base64_0.3.0",
+          "version": "0.3.0",
+          "purl": "pkg:gem/base64@0.3.0"
+        },
+        {
+          "type": "library",
+          "name": "benchmark",
+          "bom-ref": "benchmark_0.5.0",
+          "version": "0.5.0",
+          "purl": "pkg:gem/benchmark@0.5.0"
+        },
+        {
+          "type": "library",
+          "name": "bigdecimal",
+          "bom-ref": "bigdecimal_4.0.1",
+          "version": "4.0.1",
+          "purl": "pkg:gem/bigdecimal@4.0.1"
+        },
+        {
+          "type": "library",
+          "name": "csv",
+          "bom-ref": "csv_3.3.5",
+          "version": "3.3.5",
+          "purl": "pkg:gem/csv@3.3.5"
+        },
+        {
+          "type": "library",
+          "name": "debug",
+          "bom-ref": "debug_1.11.1",
+          "version": "1.11.1",
+          "purl": "pkg:gem/debug@1.11.1"
+        },
+        {
+          "type": "library",
+          "name": "drb",
+          "bom-ref": "drb_2.2.3",
+          "version": "2.2.3",
+          "purl": "pkg:gem/drb@2.2.3"
+        },
+        {
+          "type": "library",
+          "name": "fiddle",
+          "bom-ref": "fiddle_1.1.8",
+          "version": "1.1.8",
+          "purl": "pkg:gem/fiddle@1.1.8"
+        },
+        {
+          "type": "library",
+          "name": "getoptlong",
+          "bom-ref": "getoptlong_0.2.1",
+          "version": "0.2.1",
+          "purl": "pkg:gem/getoptlong@0.2.1"
+        },
+        {
+          "type": "library",
+          "name": "irb",
+          "bom-ref": "irb_1.16.0",
+          "version": "1.16.0",
+          "purl": "pkg:gem/irb@1.16.0"
+        },
+        {
+          "type": "library",
+          "name": "logger",
+          "bom-ref": "logger_1.7.0",
+          "version": "1.7.0",
+          "purl": "pkg:gem/logger@1.7.0"
+        },
+        {
+          "type": "library",
+          "name": "matrix",
+          "bom-ref": "matrix_0.4.3",
+          "version": "0.4.3",
+          "purl": "pkg:gem/matrix@0.4.3"
+        },
+        {
+          "type": "library",
+          "name": "minitest",
+          "bom-ref": "minitest_6.0.0",
+          "version": "6.0.0",
+          "purl": "pkg:gem/minitest@6.0.0"
+        },
+        {
+          "type": "library",
+          "name": "mutex_m",
+          "bom-ref": "mutex_m_0.4.0",
+          "version": "0.4.0",
+          "purl": "pkg:gem/mutex_m@0.4.0"
+        },
+        {
+          "type": "library",
+          "name": "net-ftp",
+          "bom-ref": "net-ftp_0.3.9",
+          "version": "0.3.9",
+          "purl": "pkg:gem/net-ftp@0.3.9"
+        },
+        {
+          "type": "library",
+          "name": "net-imap",
+          "bom-ref": "net-imap_0.6.2",
+          "version": "0.6.2",
+          "purl": "pkg:gem/net-imap@0.6.2"
+        },
+        {
+          "type": "library",
+          "name": "net-pop",
+          "bom-ref": "net-pop_0.1.2",
+          "version": "0.1.2",
+          "purl": "pkg:gem/net-pop@0.1.2"
+        },
+        {
+          "type": "library",
+          "name": "net-smtp",
+          "bom-ref": "net-smtp_0.5.1",
+          "version": "0.5.1",
+          "purl": "pkg:gem/net-smtp@0.5.1"
+        },
+        {
+          "type": "library",
+          "name": "nkf",
+          "bom-ref": "nkf_0.2.0",
+          "version": "0.2.0",
+          "purl": "pkg:gem/nkf@0.2.0"
+        },
+        {
+          "type": "library",
+          "name": "observer",
+          "bom-ref": "observer_0.1.2",
+          "version": "0.1.2",
+          "purl": "pkg:gem/observer@0.1.2"
+        },
+        {
+          "type": "library",
+          "name": "ostruct",
+          "bom-ref": "ostruct_0.6.3",
+          "version": "0.6.3",
+          "purl": "pkg:gem/ostruct@0.6.3"
+        },
+        {
+          "type": "library",
+          "name": "power_assert",
+          "bom-ref": "power_assert_3.0.1",
+          "version": "3.0.1",
+          "purl": "pkg:gem/power_assert@3.0.1"
+        },
+        {
+          "type": "library",
+          "name": "prime",
+          "bom-ref": "prime_0.1.4",
+          "version": "0.1.4",
+          "purl": "pkg:gem/prime@0.1.4"
+        },
+        {
+          "type": "library",
+          "name": "pstore",
+          "bom-ref": "pstore_0.2.1",
+          "version": "0.2.1",
+          "purl": "pkg:gem/pstore@0.2.1"
+        },
+        {
+          "type": "library",
+          "name": "racc",
+          "bom-ref": "racc_1.8.1",
+          "version": "1.8.1",
+          "purl": "pkg:gem/racc@1.8.1"
+        },
+        {
+          "type": "library",
+          "name": "rake",
+          "bom-ref": "rake_13.3.1",
+          "version": "13.3.1",
+          "purl": "pkg:gem/rake@13.3.1"
+        },
+        {
+          "type": "library",
+          "name": "rbs",
+          "bom-ref": "rbs_3.10.0",
+          "version": "3.10.0",
+          "purl": "pkg:gem/rbs@3.10.0"
+        },
+        {
+          "type": "library",
+          "name": "rdoc",
+          "bom-ref": "rdoc_7.0.3",
+          "version": "7.0.3",
+          "purl": "pkg:gem/rdoc@7.0.3"
+        },
+        {
+          "type": "library",
+          "name": "readline",
+          "bom-ref": "readline_0.0.4",
+          "version": "0.0.4",
+          "purl": "pkg:gem/readline@0.0.4"
+        },
+        {
+          "type": "library",
+          "name": "reline",
+          "bom-ref": "reline_0.6.3",
+          "version": "0.6.3",
+          "purl": "pkg:gem/reline@0.6.3"
+        },
+        {
+          "type": "library",
+          "name": "repl_type_completor",
+          "bom-ref": "repl_type_completor_0.1.12",
+          "version": "0.1.12",
+          "purl": "pkg:gem/repl_type_completor@0.1.12"
+        },
+        {
+          "type": "library",
+          "name": "resolv-replace",
+          "bom-ref": "resolv-replace_0.1.1",
+          "version": "0.1.1",
+          "purl": "pkg:gem/resolv-replace@0.1.1"
+        },
+        {
+          "type": "library",
+          "name": "rexml",
+          "bom-ref": "rexml_3.4.4",
+          "version": "3.4.4",
+          "purl": "pkg:gem/rexml@3.4.4"
+        },
+        {
+          "type": "library",
+          "name": "rinda",
+          "bom-ref": "rinda_0.2.0",
+          "version": "0.2.0",
+          "purl": "pkg:gem/rinda@0.2.0"
+        },
+        {
+          "type": "library",
+          "name": "rss",
+          "bom-ref": "rss_0.3.2",
+          "version": "0.3.2",
+          "purl": "pkg:gem/rss@0.3.2"
+        },
+        {
+          "type": "library",
+          "name": "test-unit",
+          "bom-ref": "test-unit_3.7.5",
+          "version": "3.7.5",
+          "purl": "pkg:gem/test-unit@3.7.5"
+        },
+        {
+          "type": "library",
+          "name": "syslog",
+          "bom-ref": "syslog_0.3.0",
+          "version": "0.3.0",
+          "purl": "pkg:gem/syslog@0.3.0"
+        },
+        {
+          "type": "library",
+          "name": "typeprof",
+          "bom-ref": "typeprof_0.31.1",
+          "version": "0.31.1",
+          "purl": "pkg:gem/typeprof@0.31.1"
+        },
+        {
+          "type": "library",
+          "name": "win32ole",
+          "bom-ref": "win32ole_1.9.2",
+          "version": "1.9.2",
+          "purl": "pkg:gem/win32ole@1.9.2"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "concurrent-ruby",
+      "bom-ref": "concurrent-ruby_1.3.6",
+      "version": "1.3.6",
+      "purl": "pkg:gem/concurrent-ruby@1.3.6"
+    },
+    {
+      "type": "library",
+      "name": "deep_merge",
+      "bom-ref": "deep_merge_1.2.2",
+      "version": "1.2.2",
+      "purl": "pkg:gem/deep_merge@1.2.2"
+    },
+    {
+      "type": "library",
+      "name": "erubi",
+      "bom-ref": "erubi_1.13.1",
+      "version": "1.13.1",
+      "purl": "pkg:gem/erubi@1.13.1"
+    },
+    {
+      "type": "library",
+      "name": "fast_gettext",
+      "bom-ref": "fast_gettext_2.4.0",
+      "version": "2.4.0",
+      "purl": "pkg:gem/fast_gettext@2.4.0"
+    },
+    {
+      "type": "library",
+      "name": "ffi",
+      "bom-ref": "ffi_1.17.4",
+      "version": "1.17.4",
+      "purl": "pkg:gem/ffi@1.17.4"
+    },
+    {
+      "type": "library",
+      "name": "gettext",
+      "bom-ref": "gettext_3.5.2",
+      "version": "3.5.2",
+      "purl": "pkg:gem/gettext@3.5.2"
+    },
+    {
+      "type": "library",
+      "name": "hiera-eyaml",
+      "bom-ref": "hiera-eyaml_5.0.1",
+      "version": "5.0.1",
+      "purl": "pkg:gem/hiera-eyaml@5.0.1"
+    },
+    {
+      "type": "library",
+      "name": "highline",
+      "bom-ref": "highline_3.1.2",
+      "version": "3.1.2",
+      "purl": "pkg:gem/highline@3.1.2"
+    },
+    {
+      "type": "library",
+      "name": "hocon",
+      "bom-ref": "hocon_1.4.0",
+      "version": "1.4.0",
+      "purl": "pkg:gem/hocon@1.4.0"
+    },
+    {
+      "type": "library",
+      "name": "locale",
+      "bom-ref": "locale_2.1.5",
+      "version": "2.1.5",
+      "purl": "pkg:gem/locale@2.1.5"
+    },
+    {
+      "type": "library",
+      "name": "net-ssh",
+      "bom-ref": "net-ssh_7.3.2",
+      "version": "7.3.2",
+      "purl": "pkg:gem/net-ssh@7.3.2"
+    },
+    {
+      "type": "library",
+      "name": "optimist",
+      "bom-ref": "optimist_3.2.1",
+      "version": "3.2.1",
+      "purl": "pkg:gem/optimist@3.2.1"
+    },
+    {
+      "type": "library",
+      "name": "semantic_puppet",
+      "bom-ref": "semantic_puppet_1.1.1",
+      "version": "1.1.1",
+      "purl": "pkg:gem/semantic_puppet@1.1.1"
+    },
+    {
+      "type": "library",
+      "name": "scanf",
+      "bom-ref": "scanf_1.0.0",
+      "version": "1.0.0",
+      "purl": "pkg:gem/scanf@1.0.0"
+    },
+    {
+      "type": "library",
+      "name": "text",
+      "bom-ref": "text_1.3.1",
+      "version": "1.3.1",
+      "purl": "pkg:gem/text@1.3.1"
+    },
+    {
+      "type": "library",
+      "name": "thor",
+      "bom-ref": "thor_1.5.0",
+      "version": "1.5.0",
+      "purl": "pkg:gem/thor@1.5.0"
+    },
+    {
+      "type": "library",
+      "name": "rexml",
+      "bom-ref": "rexml_3.4.4",
+      "version": "3.4.4",
+      "purl": "pkg:gem/rexml@3.4.4"
+    },
+    {
+      "type": "library",
+      "name": "augeas",
+      "bom-ref": "augeas_1.14.1",
+      "version": "1.14.1",
+      "purl": "pkg:github/hercules-team/augeas@1.14.1",
+      "cpe": "cpe:2.3:a:augeas:augeas:1.14.1:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "ruby-augeas",
+      "bom-ref": "ruby-augeas_0.6.0",
+      "version": "0.6.0"
+    },
+    {
+      "type": "library",
+      "name": "libxml2",
+      "bom-ref": "libxml2_2.15.3",
+      "version": "2.15.3",
+      "purl": "pkg:github/gnome/libxml2@2.15.3",
+      "cpe": "cpe:2.3:a:xmlsoft:libxml2:2.15.3:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "sys-filesystem",
+      "bom-ref": "sys-filesystem_1.5.5",
+      "version": "1.5.5",
+      "purl": "pkg:gem/sys-filesystem@1.5.5"
+    },
+    {
+      "type": "library",
+      "name": "ruby-shadow-patched",
+      "bom-ref": "ruby-shadow-patched_bc7752a9ddbde06c1418734d003a9607bafcc6df",
+      "version": "bc7752a9ddbde06c1418734d003a9607bafcc6df"
+    },
+    {
+      "type": "library",
+      "name": "virt-what",
+      "bom-ref": "virt-what_1.27",
+      "version": "1.27"
+    },
+    {
+      "type": "library",
+      "name": "dmidecode",
+      "bom-ref": "dmidecode_3.7",
+      "version": "3.7"
+    },
+    {
+      "type": "library",
+      "name": "ruby-dbus",
+      "bom-ref": "ruby-dbus_0.25.0",
+      "version": "0.25.0",
+      "purl": "pkg:gem/ruby-dbus@0.25.0"
+    },
+    {
+      "type": "library",
+      "name": "ruby-selinux",
+      "bom-ref": "ruby-selinux_3.9",
+      "version": "3.9"
+    },
+    {
+      "type": "library",
+      "name": "readline",
+      "bom-ref": "readline_8.1.2",
+      "version": "8.1.2",
+      "cpe": "cpe:2.3:a:openssl:openssl:8.1.2:*:*:*:*:*:*:*"
+    },
+    {
+      "type": "library",
+      "name": "CFPropertyList",
+      "bom-ref": "CFPropertyList_4.0.0",
+      "version": "4.0.0",
+      "purl": "pkg:gem/CFPropertyList@4.0.0"
+    },
+    {
+      "type": "library",
+      "name": "minitar",
+      "bom-ref": "minitar_1.1.0",
+      "version": "1.1.0",
+      "purl": "pkg:gem/minitar@1.1.0"
+    }
+  ]
+}
