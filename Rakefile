@@ -58,14 +58,24 @@ namespace :vox do
     end
 
     desc "Print CVEs reported for project and tag."
-    task :cves, [:project, :tag] do |_, args|
+    task :cves, [:project, :tag, :linkify] do |_, args|
       validate_project!(args[:project])
+      args.with_defaults(linkify: false)
 
       data = OpenVox::SBOMTools::Report.cves(args[:project], args[:tag])
       # Sort by package name, then by CVSS score. Score positions are
       # swapped to create descending order.
       data.sort! {|a, b| [a[:affects].to_s, b[:score]&.to_f] <=> [b[:affects].to_s, a[:score]&.to_f]}
-      data.map!  {|c| [c[:id], c[:score] || 'N/A', c[:affects]]}
+
+      data = if args[:linkify]
+               data.map do |c|
+                 [format('[%<id>s](%<url>s)', c),
+                  c[:score] || 'N/A',
+                  format('`%<affects>s`', c)]
+               end
+             else
+               data.map {|c| [c[:id], c[:score] || 'N/A', c[:affects]]}
+             end
 
       labels = ['Identifier', 'CVSS 3.1 Score', 'Affects']
       table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
@@ -76,14 +86,24 @@ namespace :vox do
     end
 
     desc "Print CVEs fixes between project tags."
-    task :cves_fixed, [:project, :from, :to] do |_, args|
+    task :cves_fixed, [:project, :from, :to, :linkify] do |_, args|
       validate_project!(args[:project])
+      args.with_defaults(linkify: false)
 
       data = OpenVox::SBOMTools::Report.cves_fixed(args[:project], args[:from], args[:to])
       # Sort by package name, then by CVSS score. Score positions are
       # swapped to create descending order.
       data.sort! {|a, b| [a[:resolved_by].to_s, b[:score]&.to_f] <=> [b[:resolved_by].to_s, a[:score]&.to_f]}
-      data.map!  {|c| [c[:id], c[:score] || 'N/A', c[:resolved_by]]}
+
+      data = if args[:linkify]
+               data.map do |c|
+                 [format('[%<id>s](%<url>s)', c),
+                  c[:score] || 'N/A',
+                  format('`%<resolved_by>s`', c)]
+               end
+             else
+               data.map {|c| [c[:id], c[:score] || 'N/A', c[:resolved_by]]}
+             end
 
       labels = ['Identifier', 'CVSS 3.1 Score', 'Resolved By']
       table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,

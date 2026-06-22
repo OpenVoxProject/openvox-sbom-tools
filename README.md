@@ -99,6 +99,21 @@ $ mise rake vox:sbom:cves_fixed[openvox-agent,8.27.0,8.28.0]
 | CVE-2026-42770 |       3.7      | pkg:github/openssl/openssl@3.0.21 |
 ```
 
+The `vox:sbom:cves` and `vox:sbom:cves_fixed` tasks accept an optional
+`linkify` argument that includes links to CVE reports in the generated
+Markdown. This behavior is useful for generating `CHANGELOG.md` entries
+but is off by default as it is less readable as terminal output:
+
+```console
+$ mise rake vox:sbom:cves_fixed[openvox-agent,8.27.0,8.28.0,true]
+
+| Identifier                                                        | CVSS 3.1 Score | Resolved By                         |
+| :---------------------------------------------------------------- | :------------: | :---------------------------------- |
+| [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182) |       9.1      | `pkg:github/openssl/openssl@3.0.21` |
+| [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447) |       8.8      | `pkg:github/openssl/openssl@3.0.21` |
+...output truncated for brevity
+```
+
 ## Component Reporting Workflows
 
 The following rake tasks can be used to generate Markdown-formatted
