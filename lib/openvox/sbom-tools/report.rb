@@ -29,5 +29,34 @@ module OpenVox::SBOMTools
 
       extract_components.call(sbom).flatten
     end
+
+    def component_diff(project, from, to)
+      from = components(project, from)
+      to   = components(project, to)
+
+      diff = [from, to].flatten.group_by {|c| c[:name]}.map do |name, data|
+        versions = data.map {|d| d[:version]}
+
+        if versions.count > 2
+          # There should only be one component of a given name in each
+          # release
+          $stderr.puts format('WARN: Multiple components named %<name>s found.', name:)
+          next
+        elsif versions.count == 1
+          if to.find {|c| c[:name] == name}
+            [name, 'Added', versions[0]]
+          else
+            [name, versions[0], 'Removed']
+          end
+        elsif versions.uniq.count == 1
+          # No change.
+          next
+        else
+          [name, *versions]
+        end
+      end
+
+      diff.compact
+    end
   end
 end

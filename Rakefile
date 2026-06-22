@@ -25,5 +25,20 @@ namespace :vox do
 
       $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
     end
+
+    desc "Print component changes between project tags."
+    task :component_diff, [:project, :from, :to] do |_, args|
+      data = OpenVox::SBOMTools::Report.component_diff(args[:project],
+                                                       args[:from],
+                                                       args[:to])
+      data = data.sort_by {|c| c.first}
+
+      labels = ['Component', 'Old Version', 'New Version']
+      table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
+                                                            align: %w[l l l],
+                                                            is_rows: true)
+
+      $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+    end
   end
 end
