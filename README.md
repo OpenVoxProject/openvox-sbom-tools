@@ -200,3 +200,15 @@ This task will sync data from the following sources:
       * https://github.com/OpenVoxProject/puppet-runtime/
       * https://github.com/OpenVoxProject/openvox/tree/main/packaging
       * https://github.com/OpenVoxProject/openbolt/tree/main/packaging
+
+## License
+
+Different pieces of content in this project are available under different license terms:
+
+  - See [lib/openvox/sbom-tools/data/COPYING](lib/openvox/sbom-tools/data/COPYING) for licenses that apply to data files in the `lib/openvox/sbom-tools/data/` directory.
+
+  - Data files in the `lib/openvox/sbom-tools/sbom/` directory are available under the Creative Commons Attribution 4.0 International license. See [lib/openvox/sbom-tools/sbom/LICENSE](lib/openvox/sbom-tools/sbom/LICENSE) for terms.
+
+  - [lib/openvox/sbom-tools/markdown-tables.rb](lib/openvox/sbom-tools/markdown-tables.rb) is Copyright (c) 2017 Chris de Graaf and uses the MIT license.
+
+  - Everything else is released under the AGPL as described in [LICENSE](LICENSE)
