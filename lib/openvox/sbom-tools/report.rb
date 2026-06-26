@@ -86,7 +86,13 @@ module OpenVox::SBOMTools
 
       cves = data['vulnerabilities'].map do |vuln|
         id = vuln['id']
-        url = vuln['source']['url']
+        url = if id.start_with?('CVE-')
+                # Prefer NVD records for assigned CVE IDs.
+                format('https://nvd.nist.gov/vuln/detail/%<id>s', id:)
+              else
+                # Could be something else. Like GitHub.
+                vuln['source']['url']
+              end
         score = vuln['ratings'].find {|r| r['method'] == 'CVSSv31'}&.dig('score')
         affects = Purl.parse(vuln['affects'].first['ref'])
         # Grype echos PURLs back with data duplicated into the qualifiers
