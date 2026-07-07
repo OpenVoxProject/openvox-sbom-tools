@@ -44,6 +44,7 @@ module OpenVox::SBOMTools::Generator
     BUNDLED_GEM_UPDATES = {
       [['>= 2026.05.11.1'], ['~> 3.2']] => {'net-imap' => '0.4.24',
                                             'erb'      => '4.0.3.1'},
+      [['>= 2026.06.24.1'], ['~> 3.2']] => {'net-imap' => '0.6.4.1'},
     }
 
     def initialize(file, project, tag)
