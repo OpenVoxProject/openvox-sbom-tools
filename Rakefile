@@ -4,7 +4,7 @@ require_relative 'lib/openvox/sbom-tools'
 require_relative 'lib/openvox/sbom-tools/markdown-tables'
 
 def validate_project!(project)
-  valid_projects = %w[openvox-agent openbolt openvox-server openvoxdb]
+  valid_projects = %w[openvox-agent openbolt openvox-server openvox-server-fips openvoxdb openvoxdb-fips]
 
   unless valid_projects.include?(project)
     raise ArgumentError,
@@ -52,6 +52,22 @@ namespace :vox do
       labels = ['Component', 'Version']
       table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
                                                             align: %w[l l],
+                                                            is_rows: true)
+
+      $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+    end
+
+    desc "Print component differences between the standard and FIPS variants of a tag."
+    task :variant_diff, [:project, :tag] do |_, args|
+      validate_project!("#{args[:project]}-fips")
+
+      data = OpenVox::SBOMTools::Report.variant_diff(args[:project], args[:tag])
+      data.each {|c| c[0] = clean_purl(c[0]) }
+      data.sort_by! {|c| c.first}
+
+      labels = ['Component', 'Standard', 'FIPS']
+      table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
+                                                            align: %w[l l l],
                                                             is_rows: true)
 
       $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)

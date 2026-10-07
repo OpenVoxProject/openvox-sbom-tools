@@ -38,7 +38,7 @@ module OpenVox::SBOMTools
         generator = case project
                     when 'openvox-agent', 'openbolt'
                       OpenVox::SBOMTools::Generator::Vanagon.new(file, project, tag)
-                    when 'openvox-server', 'openvoxdb'
+                    when 'openvox-server', 'openvox-server-fips', 'openvoxdb', 'openvoxdb-fips'
                       OpenVox::SBOMTools::Generator::Uberjar.new(file, project, tag)
                     end
 

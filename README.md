@@ -9,6 +9,12 @@ Software Bill of Materials (SBOMs) for the following OpenVox projects:
   - `openvoxdb`
   - `openvox-server`
 
+The FIPS packages of `openvox-server` and `openvoxdb` are a separate
+variant, named by a `-fips` suffix on the project argument of every task,
+for example `openvox-server-fips`. The SBOM of the plain project name
+describes the regular packages. These SBOMs record their variant as an
+`openvox:variant` property on the top level component.
+
 This tooling automates the following workflows:
 
   - Maintenance of data files containing information on software
@@ -159,6 +165,20 @@ $ mise rake vox:sbom:component_diff[openvox-agent,8.26.2,9.0.0-alpha2]
 ...output truncated for brevity
 ```
 
+A table of the components that differ between the regular and FIPS
+packages of one release can be generated with the `vox:sbom:variant_diff`
+task:
+
+```console
+$ mise rake vox:sbom:variant_diff[openvox-server,9.0.1]
+
+| Component                               | Standard | FIPS    |
+| :-------------------------------------- | :------- | :------ |
+| pkg:maven/org.bouncycastle/bc-fips      | Absent   | 1.0.2.6 |
+| pkg:maven/org.bouncycastle/bcpkix-fips  | Absent   | 1.0.8   |
+...output truncated for brevity
+```
+
 ## SBOM Generation Workflows
 
 SBOMs in [CycloneDX-JSON format][cdx-json] can be generated using
@@ -179,6 +199,22 @@ Finished in 268.4ms
 > The generation task will not over-write existing files in
 > [`lib/openvox/sbom-tools/sbom`][sbom-data]. To update existing SBOMs,
 > remove the output files before running the `vox:sbom:gen` task.
+
+The `openvox-agent` and `openbolt` SBOMs are generated from the component
+data described under Data Update Workflows below.
+
+The `openvox-server` and `openvoxdb` SBOMs are generated from the tarball
+the build of the tag published to https://artifacts.voxpupuli.org, which
+is downloaded once into `~/.cache/openvox-sbom-tools/archives`. The regular
+variant reads `<project>-<tag>.tar.gz` and the FIPS variant reads
+`<project>-<tag>-fips_build.tar.gz`. The tarball carries the dependency
+tree lein resolved for the uberjar, the install script that names the
+jars installed next to it, and the lists of vendored gems. Jars bundled
+inside a vendored gem, such as the BouncyCastle jars of `jruby-openssl`,
+are not listed. The `jar` tool of the JDK is used to confirm that the
+uberjar contains no BouncyCastle class at all in the FIPS variant and
+agrees with the dependency tree otherwise. A FIPS SBOM is only possible
+once the FIPS build of the tag has published its tarball.
 
 ## Data Update Workflows
 

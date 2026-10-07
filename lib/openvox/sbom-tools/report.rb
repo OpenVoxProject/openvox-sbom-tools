@@ -46,9 +46,29 @@ module OpenVox::SBOMTools
     end
 
     def component_diff(project, from, to)
-      from = components(project, from)
-      to   = components(project, to)
+      diff_components(components(project, from), components(project, to),
+                      absent_before: 'Added', absent_after: 'Removed')
+    end
 
+    # Components of the standard and FIPS variants of one release, side by
+    # side. Both SBOMs must come from the tarball generator, which records
+    # the variant, rather than from an earlier generator.
+    def variant_diff(project, tag)
+      [project, "#{project}-fips"].each do |variant|
+        properties = OpenVox::SBOMTools::SBOM[variant, tag].dig('metadata', 'component', 'properties') || []
+        next if properties.any? { |property| property['name'] == 'openvox:variant' }
+
+        raise "#{OpenVox::SBOMTools::SBOM.file_path(variant, tag)} predates variants, delete it and generate it again"
+      end
+
+      diff_components(components(project, tag), components("#{project}-fips", tag),
+                      absent_before: 'Absent', absent_after: 'Absent')
+    end
+
+    # Rows of name, version before and version after for every component
+    # that differs. A component missing on one side shows the label given
+    # for that side instead of a version.
+    def diff_components(from, to, absent_before:, absent_after:)
       diff = [from, to].flatten.group_by {|c| c[:name]}.map do |name, data|
         versions = data.map {|d| d[:version]}
 
@@ -59,9 +79,9 @@ module OpenVox::SBOMTools
           next
         elsif versions.count == 1
           if to.find {|c| c[:name] == name}
-            [name, 'Added', versions[0]]
+            [name, absent_before, versions[0]]
           else
-            [name, versions[0], 'Removed']
+            [name, versions[0], absent_after]
           end
         elsif versions.uniq.count == 1
           # No change.
