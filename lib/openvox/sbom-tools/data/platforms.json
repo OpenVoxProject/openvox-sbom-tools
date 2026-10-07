@@ -22,6 +22,7 @@
       "macos-all-x86_64",
       "redhatfips-8-x86_64",
       "redhatfips-9-x86_64",
+      "redhatfips-10-x86_64",
       "sles-15-x86_64",
       "sles-16-aarch64",
       "sles-16-x86_64",
@@ -53,7 +54,8 @@
     ],
     "ezbake-fips-rpm": [
       "redhatfips-8",
-      "redhatfips-9"
+      "redhatfips-9",
+      "redhatfips-10"
     ]
   },
   "8.x": {
