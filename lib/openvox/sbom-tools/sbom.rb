@@ -39,7 +39,7 @@ module OpenVox::SBOMTools
                     when 'openvox-agent', 'openbolt'
                       OpenVox::SBOMTools::Generator::Vanagon.new(file, project, tag)
                     when 'openvox-server', 'openvoxdb'
-                      OpenVox::SBOMTools::Generator::Maven.new(file, project, tag)
+                      OpenVox::SBOMTools::Generator::Uberjar.new(file, project, tag)
                     end
 
         generator.generate!
