@@ -18,6 +18,12 @@ module OpenVox::SBOMTools
       # LibXML2 CVEs, fixed by upgrading to 2.15.3 in:
       #   https://github.com/OpenVoxProject/puppet-runtime/commit/95e89907f35bdab9e75de61b7cdd3433ae1b749f
       '>= 2026.05.11.1' => %w[CVE-2025-6021 CVE-2025-6170],
+      # Ruby 3.2 Regex CVEs, fixed by backporting patches from Ruby 3.3.13 in:
+      #   https://github.com/OpenVoxProject/puppet-runtime/pull/321
+      # OpenSSL September CVEs, fixed by patches from Debian 12 in:
+      #   https://github.com/OpenVoxProject/puppet-runtime/pull/322
+      '>= 2026.10.28.1' => %w[CVE-2026-89078 CVE-2026-93577 CVE-2026-110264 CVE-2026-97229
+                              CVE-2026-35189 CVE-2026-75805 CVE-2026-75806 CVE-2026-54872 CVE-2026-77696 CVE-2026-84782],
     }
 
     module_function
