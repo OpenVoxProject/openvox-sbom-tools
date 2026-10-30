@@ -89,7 +89,7 @@ namespace :vox do
                data.map do |c|
                  [format('[%<id>s](%<url>s)', c),
                   c[:score] || 'N/A',
-                  format('`%<affects>s`', clean_purl(c))]
+                  format('`%s`', clean_purl(c[:affects]))]
                end
              else
                data.map {|c| [c[:id], c[:score] || 'N/A', clean_purl(c[:affects])]}
@@ -117,7 +117,7 @@ namespace :vox do
                data.map do |c|
                  [format('[%<id>s](%<url>s)', c),
                   c[:score] || 'N/A',
-                  format('`%<resolved_by>s`', clean_purl(c))]
+                  format('`%s`', clean_purl(c[:resolved_by]))]
                end
              else
                data.map {|c| [c[:id], c[:score] || 'N/A', clean_purl(c[:resolved_by])]}
