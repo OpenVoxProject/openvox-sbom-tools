@@ -67,12 +67,16 @@ namespace :vox do
       data.each {|c| c[0] = clean_purl(c[0]) }
       data.sort_by! {|c| c.first}
 
-      labels = ['Component', 'Old Version', 'New Version']
-      table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
-                                                            align: %w[l l l],
-                                                            is_rows: true)
+      if data.empty?
+        $stderr.puts(format('No changed components for %<project>s between versions %<from>s and %<to>s', args))
+      else
+        labels = ['Component', 'Old Version', 'New Version']
+        table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
+                                                              align: %w[l l l],
+                                                              is_rows: true)
 
-      $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+        $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+      end
     end
 
     desc "Print CVEs reported for project and tag."
@@ -95,12 +99,16 @@ namespace :vox do
                data.map {|c| [c[:id], c[:score] || 'N/A', clean_purl(c[:affects])]}
              end
 
-      labels = ['Identifier', 'CVSS 3.1 Score', 'Affects']
-      table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
-                                                            align: %w[l c l],
-                                                            is_rows: true)
+      if data.empty?
+        $stderr.puts(format('No unresolved CVEs found for %<project>s at version %<tag>s', args))
+      else
+        labels = ['Identifier', 'CVSS 3.1 Score', 'Affects']
+        table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
+                                                              align: %w[l c l],
+                                                              is_rows: true)
 
-      $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+        $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+      end
     end
 
     desc "Print CVEs fixes between project tags."
@@ -123,12 +131,16 @@ namespace :vox do
                data.map {|c| [c[:id], c[:score] || 'N/A', clean_purl(c[:resolved_by])]}
              end
 
-      labels = ['Identifier', 'CVSS 3.1 Score', 'Resolved By']
-      table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
-                                                            align: %w[l c l],
-                                                            is_rows: true)
+      if data.empty?
+        $stderr.puts(format('No resolved CVEs found for %<project>s between versions %<from>s and %<to>s', args))
+      else
+        labels = ['Identifier', 'CVSS 3.1 Score', 'Resolved By']
+        table = OpenVox::SBOMTools::MarkdownTables.make_table(labels, data,
+                                                              align: %w[l c l],
+                                                              is_rows: true)
 
-      $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+        $stdout.puts OpenVox::SBOMTools::MarkdownTables.plain_text(table)
+      end
     end
   end
 end
