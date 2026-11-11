@@ -922,5 +922,215 @@
         }
       }
     }
+  },
+  "9.0.0": {
+    "components": {
+      "openbolt-runtime": "2026.11.06.1",
+      "openbolt": "9.0.0",
+      "openbolt-create-ruby-tarballs": null,
+      "gem-prune": null
+    },
+    "projects": {
+      "openbolt": {
+        "amazon-2023-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "amazon-2023-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "debian-12-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "debian-12-amd64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "debian-13-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "debian-13-amd64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "debian-13-armhf": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "el-10-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "el-10-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "el-8-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "el-8-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "el-9-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "el-9-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "fedora-43-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "fedora-43-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "fedora-44-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "fedora-44-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "fedora-45-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "fedora-45-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "macos-all-arm64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "macos-all-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "sles-15-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "sles-16-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "sles-16-x86_64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-22.04-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-22.04-amd64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-24.04-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-24.04-amd64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-24.04-armhf": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-26.04-aarch64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-26.04-amd64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "ubuntu-26.04-armhf": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        },
+        "windows-msys2-x64": {
+          "openbolt-runtime": "2026.11.06.1",
+          "openbolt": "9.0.0",
+          "openbolt-create-ruby-tarballs": null,
+          "gem-prune": null
+        }
+      }
+    }
   }
 }
