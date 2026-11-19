@@ -60,8 +60,9 @@
     {
       "type": "library",
       "name": "puppet-ca-bundle-main",
-      "bom-ref": "puppet-ca-bundle-main_refs/tags/2.0.0",
-      "version": "refs/tags/2.0.0"
+      "bom-ref": "puppet-ca-bundle-main_2.0.0",
+      "version": "2.0.0",
+      "purl": "pkg:github/openvoxproject/puppet-ca-bundle@2.0.0"
     },
     {
       "type": "platform",
@@ -1234,7 +1235,8 @@
       "type": "library",
       "name": "ruby-augeas",
       "bom-ref": "ruby-augeas_0.6.0",
-      "version": "0.6.0"
+      "version": "0.6.0",
+      "purl": "pkg:github/hercules-team/ruby-augeas@0.6.0"
     },
     {
       "type": "library",
@@ -1260,7 +1262,7 @@
       "name": "readline",
       "bom-ref": "readline_8.1.2",
       "version": "8.1.2",
-      "cpe": "cpe:2.3:a:openssl:openssl:8.1.2:*:*:*:*:*:*:*"
+      "cpe": "cpe:2.3:a:gnu:readline:8.1.2:*:*:*:*:*:*:*"
     }
   ]
 }
