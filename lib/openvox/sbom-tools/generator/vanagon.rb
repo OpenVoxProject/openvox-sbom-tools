@@ -13,28 +13,41 @@ module OpenVox::SBOMTools::Generator
     # CPE is used to match against CVEs published to nvd.nist.gov
     # PURL is used to detect when new releases (git tags) are published.
     METADATA = {
-      'augeas'   => {cpe:  'cpe:2.3:a:augeas:augeas:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'hercules-team'}},
-      'curl'     => {cpe:  'cpe:2.3:a:haxx:curl:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'curl'}},
-      'libffi'   => {cpe:  'cpe:2.3:a:libffi_project:libffi:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'libffi'}},
-      'libxml2'  => {cpe:  'cpe:2.3:a:xmlsoft:libxml2:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'gnome'}},
-      'libyaml'  => {cpe:  'cpe:2.3:a:pyyaml:libyaml:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'yaml'}},
-      'openssl'  => {cpe:  'cpe:2.3:a:openssl:openssl:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'openssl'}},
-      'readline' => {cpe:  'cpe:2.3:a:openssl:openssl:%{version}:*:*:*:*:*:*:*'},
-      'ruby'     => {cpe:  'cpe:2.3:a:ruby-lang:ruby:%{version}:*:*:*:*:*:*:*',
-                     purl: {type: 'github',
-                            namespace: 'ruby'}},
+      'augeas'      => {cpe:  'cpe:2.3:a:augeas:augeas:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'hercules-team'}},
+      'curl'        => {cpe:  'cpe:2.3:a:haxx:curl:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'curl'}},
+      'dmidecode'   => {cpe:  'cpe:2.3:a:nongnu:dmidecode:%{version}:*:*:*:*:*:*:*'},
+      'libffi'      => {cpe:  'cpe:2.3:a:libffi_project:libffi:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'libffi'}},
+      'libxml2'     => {cpe:  'cpe:2.3:a:xmlsoft:libxml2:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'gnome'}},
+      'libyaml'     => {cpe:  'cpe:2.3:a:pyyaml:libyaml:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'yaml'}},
+      'openssl'     => {cpe:  'cpe:2.3:a:openssl:openssl:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'openssl'}},
+      'readline'    => {cpe:  'cpe:2.3:a:gnu:readline:%{version}:*:*:*:*:*:*:*'},
+      'ruby'        => {cpe:  'cpe:2.3:a:ruby-lang:ruby:%{version}:*:*:*:*:*:*:*',
+                        purl: {type: 'github',
+                               namespace: 'ruby'}},
+      'ruby-augeas' => {purl: {type: 'github',
+                               namespace: 'hercules-team'}},
+    }
+
+    # OpenVox components and the OpenVoxProject repositories they are
+    # built from, as named in the Vanagon component configs. Vendored
+    # modules (module-puppetlabs-*) follow the same scheme.
+    OPENVOX_REPOS = {
+      'puppet'                => 'openvox',
+      'openfact'              => 'openfact',
+      'puppet-resource_api'   => 'puppet-resource_api',
+      'puppet-ca-bundle-main' => 'puppet-ca-bundle',
     }
 
     # Updates to gems bundled with Ruby
@@ -87,6 +100,8 @@ module OpenVox::SBOMTools::Generator
 
         pkg = Sbom::Data::Package.new
 
+        version = clean_version(version)
+
         if name.match?(/rubygem-.*/)
           pkg.name = name.split('-')[1..-1].join('-')
           pkg.version = version
@@ -95,7 +110,11 @@ module OpenVox::SBOMTools::Generator
           pkg.name = name
           pkg.version = version
 
-          if (pkg_meta = METADATA[name])
+          if (repo = openvox_repo(name))
+            # The purl name is the repository, not the component name.
+            pkg.purl = Purl::PackageURL.new(type: 'github', namespace: 'openvoxproject',
+                                            name: repo, version:).to_s
+          elsif (pkg_meta = METADATA[name])
             pkg.generate_purl(**pkg_meta[:purl]) if pkg_meta.key?(:purl)
             pkg.set_cpe(format(pkg_meta[:cpe], version:)) if pkg_meta.key?(:cpe)
           end
@@ -143,6 +162,16 @@ module OpenVox::SBOMTools::Generator
       ruby['components'] = ruby_info['components']
 
       generator
+    end
+
+    # Vanagon reports git refs as the version of components built from a
+    # tag, e.g. refs/tags/v2.0.1. Use the plain version, 2.0.1.
+    def clean_version(version)
+      version.sub(%r{\Arefs/tags/}, '').sub(/\Av(?=\d)/, '')
+    end
+
+    def openvox_repo(name)
+      OPENVOX_REPOS.fetch(name) { name.delete_prefix('module-') if name.start_with?('module-puppetlabs-') }
     end
   end
 end

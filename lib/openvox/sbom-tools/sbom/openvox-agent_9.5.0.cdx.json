@@ -2,7 +2,7 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
   "serialNumber": "urn:uuid:32bdc9eb-0be0-4493-b12f-f441f1c8105b",
-  "version": 1,
+  "version": 2,
   "metadata": {
     "timestamp": "2026-11-19T03:39:11Z",
     "tools": {
@@ -31,19 +31,22 @@
       "type": "library",
       "name": "puppet",
       "bom-ref": "puppet_9.5.0",
-      "version": "9.5.0"
+      "version": "9.5.0",
+      "purl": "pkg:github/openvoxproject/openvox@9.5.0"
     },
     {
       "type": "library",
       "name": "openfact",
       "bom-ref": "openfact_6.2.3",
-      "version": "6.2.3"
+      "version": "6.2.3",
+      "purl": "pkg:github/openvoxproject/openfact@6.2.3"
     },
     {
       "type": "library",
       "name": "puppet-resource_api",
-      "bom-ref": "puppet-resource_api_v2.0.1",
-      "version": "v2.0.1"
+      "bom-ref": "puppet-resource_api_2.0.1",
+      "version": "2.0.1",
+      "purl": "pkg:github/openvoxproject/puppet-resource_api@2.0.1"
     },
     {
       "type": "library",
@@ -54,56 +57,65 @@
     {
       "type": "library",
       "name": "module-puppetlabs-augeas_core",
-      "bom-ref": "module-puppetlabs-augeas_core_refs/tags/v2.0.1",
-      "version": "refs/tags/v2.0.1"
+      "bom-ref": "module-puppetlabs-augeas_core_2.0.1",
+      "version": "2.0.1",
+      "purl": "pkg:github/openvoxproject/puppetlabs-augeas_core@2.0.1"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-cron_core",
-      "bom-ref": "module-puppetlabs-cron_core_refs/tags/v2.0.2",
-      "version": "refs/tags/v2.0.2"
+      "bom-ref": "module-puppetlabs-cron_core_2.0.2",
+      "version": "2.0.2",
+      "purl": "pkg:github/openvoxproject/puppetlabs-cron_core@2.0.2"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-host_core",
-      "bom-ref": "module-puppetlabs-host_core_refs/tags/v2.0.1",
-      "version": "refs/tags/v2.0.1"
+      "bom-ref": "module-puppetlabs-host_core_2.0.1",
+      "version": "2.0.1",
+      "purl": "pkg:github/openvoxproject/puppetlabs-host_core@2.0.1"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-mount_core",
-      "bom-ref": "module-puppetlabs-mount_core_refs/tags/v1.3.0",
-      "version": "refs/tags/v1.3.0"
+      "bom-ref": "module-puppetlabs-mount_core_1.3.0",
+      "version": "1.3.0",
+      "purl": "pkg:github/openvoxproject/puppetlabs-mount_core@1.3.0"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-scheduled_task",
-      "bom-ref": "module-puppetlabs-scheduled_task_v5.0.0",
-      "version": "v5.0.0"
+      "bom-ref": "module-puppetlabs-scheduled_task_5.0.0",
+      "version": "5.0.0",
+      "purl": "pkg:github/openvoxproject/puppetlabs-scheduled_task@5.0.0"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-selinux_core",
-      "bom-ref": "module-puppetlabs-selinux_core_refs/tags/v2.0.1",
-      "version": "refs/tags/v2.0.1"
+      "bom-ref": "module-puppetlabs-selinux_core_2.0.1",
+      "version": "2.0.1",
+      "purl": "pkg:github/openvoxproject/puppetlabs-selinux_core@2.0.1"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-sshkeys_core",
-      "bom-ref": "module-puppetlabs-sshkeys_core_refs/tags/v3.0.2",
-      "version": "refs/tags/v3.0.2"
+      "bom-ref": "module-puppetlabs-sshkeys_core_3.0.2",
+      "version": "3.0.2",
+      "purl": "pkg:github/openvoxproject/puppetlabs-sshkeys_core@3.0.2"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-yumrepo_core",
-      "bom-ref": "module-puppetlabs-yumrepo_core_refs/tags/v3.0.1",
-      "version": "refs/tags/v3.0.1"
+      "bom-ref": "module-puppetlabs-yumrepo_core_3.0.1",
+      "version": "3.0.1",
+      "purl": "pkg:github/openvoxproject/puppetlabs-yumrepo_core@3.0.1"
     },
     {
       "type": "library",
       "name": "module-puppetlabs-zfs_core",
-      "bom-ref": "module-puppetlabs-zfs_core_refs/tags/v2.0.1",
-      "version": "refs/tags/v2.0.1"
+      "bom-ref": "module-puppetlabs-zfs_core_2.0.1",
+      "version": "2.0.1",
+      "purl": "pkg:github/openvoxproject/puppetlabs-zfs_core@2.0.1"
     },
     {
       "type": "library",
@@ -132,8 +144,9 @@
     {
       "type": "library",
       "name": "puppet-ca-bundle-main",
-      "bom-ref": "puppet-ca-bundle-main_refs/tags/2.0.0",
-      "version": "refs/tags/2.0.0"
+      "bom-ref": "puppet-ca-bundle-main_2.0.0",
+      "version": "2.0.0",
+      "purl": "pkg:github/openvoxproject/puppet-ca-bundle@2.0.0"
     },
     {
       "type": "platform",
@@ -885,7 +898,8 @@
       "type": "library",
       "name": "ruby-augeas",
       "bom-ref": "ruby-augeas_0.6.0",
-      "version": "0.6.0"
+      "version": "0.6.0",
+      "purl": "pkg:github/hercules-team/ruby-augeas@0.6.0"
     },
     {
       "type": "library",
@@ -918,7 +932,8 @@
       "type": "library",
       "name": "dmidecode",
       "bom-ref": "dmidecode_3.7",
-      "version": "3.7"
+      "version": "3.7",
+      "cpe": "cpe:2.3:a:nongnu:dmidecode:3.7:*:*:*:*:*:*:*"
     },
     {
       "type": "library",
@@ -938,7 +953,7 @@
       "name": "readline",
       "bom-ref": "readline_8.1.2",
       "version": "8.1.2",
-      "cpe": "cpe:2.3:a:openssl:openssl:8.1.2:*:*:*:*:*:*:*"
+      "cpe": "cpe:2.3:a:gnu:readline:8.1.2:*:*:*:*:*:*:*"
     },
     {
       "type": "library",
